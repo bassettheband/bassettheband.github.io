@@ -1,0 +1,48 @@
+<section class="colorlib-experience" data-section="shows">
+    <div class="colorlib-narrow-content">
+        <div class="row">
+            <div
+                class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
+                data-animate-effect="fadeInLeft"
+            >
+                <h2 class="colorlib-heading animate-box">Upcoming Shows</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="timeline-centered">
+                    {% for show in site.data.shows %}
+                    <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon color-1">
+                                <i class="icon-music"></i>
+                            </div>
+                            <div class="timeline-label">
+                                <h2>
+                                    {% if show.link %}
+                                    <a href="{{ show.link }}" style="text-decoration:underline;">{{
+                                        show.title
+                                    }}</a>
+                                    {% else %}
+                                    {{ show.title }}
+                                    {% endif %}
+                                    <span>{{ show.date }}</span>
+                                </h2>
+                                <p>Location: {{ show.location }}</p>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                    <article
+                        class="timeline-entry begin animate-box"
+                        data-animate-effect="fadeInBottom"
+                    >
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon color-none"></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
